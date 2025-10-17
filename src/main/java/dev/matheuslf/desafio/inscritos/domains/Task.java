@@ -1,8 +1,6 @@
 package dev.matheuslf.desafio.inscritos.domains;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,12 +14,13 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "tb_task")
 public class Task {
 
-
-    @GeneratedValue(generator = "Long")
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
 
     @NotNull
     private String title;
@@ -41,6 +40,7 @@ public class Task {
     }
 
     private Date dueDate;
+    @OneToOne
     private Project projectId;
 
 }
