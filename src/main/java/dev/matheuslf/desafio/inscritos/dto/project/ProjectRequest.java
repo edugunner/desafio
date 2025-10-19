@@ -1,8 +1,7 @@
-package dev.matheuslf.desafio.inscritos.dto;
+package dev.matheuslf.desafio.inscritos.dto.project;
 
 import dev.matheuslf.desafio.inscritos.domains.Project;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 import java.util.Date;

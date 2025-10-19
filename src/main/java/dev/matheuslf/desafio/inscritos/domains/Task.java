@@ -27,20 +27,26 @@ public class Task {
     private String description;
 
 
-    private enum Status {
+    public enum Status {
         TODO,
         DOING,
         DONE
     }
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
-    private enum priority {
+    public enum Priority {
         LOW,
         MEDIUM,
         HIGH
     }
+    @Enumerated(EnumType.STRING)
+    private Priority priority;
 
     private Date dueDate;
-    @OneToOne
-    private Project projectId;
+
+    @ManyToOne
+    @JoinColumn(name = "project_id")
+    private Project project;
 
 }

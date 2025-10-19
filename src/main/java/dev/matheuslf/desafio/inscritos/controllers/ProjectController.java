@@ -2,8 +2,8 @@ package dev.matheuslf.desafio.inscritos.controllers;
 
 
 import dev.matheuslf.desafio.inscritos.domains.Project;
-import dev.matheuslf.desafio.inscritos.dto.ProjectRequest;
-import dev.matheuslf.desafio.inscritos.dto.ProjectResponse;
+import dev.matheuslf.desafio.inscritos.dto.project.ProjectRequest;
+import dev.matheuslf.desafio.inscritos.dto.project.ProjectResponse;
 import dev.matheuslf.desafio.inscritos.services.ProjectService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

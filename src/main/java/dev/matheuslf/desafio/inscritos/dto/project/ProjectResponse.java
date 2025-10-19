@@ -1,5 +1,5 @@
 // src/main/java/dev/matheuslf/desafio/inscritos/dto/ProjectResponse.java
-package dev.matheuslf.desafio.inscritos.dto;
+package dev.matheuslf.desafio.inscritos.dto.project;
 
 import dev.matheuslf.desafio.inscritos.domains.Project;
 import java.util.Date;

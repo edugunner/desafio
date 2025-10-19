@@ -1,9 +1,8 @@
 package dev.matheuslf.desafio.inscritos.services;
 
 import dev.matheuslf.desafio.inscritos.domains.Project;
-import dev.matheuslf.desafio.inscritos.dto.ProjectRequest;
+import dev.matheuslf.desafio.inscritos.dto.project.ProjectRequest;
 import dev.matheuslf.desafio.inscritos.repositories.ProjectRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
