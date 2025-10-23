@@ -83,5 +83,17 @@ public class TaskService {
         }
     }
 
+    public Task deleteById(Long taskId) {
+        var taskOptional = taskRepository.findById(taskId);
+
+        if (taskOptional.isPresent()) {
+            Task task = taskOptional.get();
+            taskRepository.delete(task);
+            return task;
+        } else {
+            throw new IllegalArgumentException("Tarefa não encontrada");
+        }
+    }
+
 }
 

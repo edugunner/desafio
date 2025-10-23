@@ -7,6 +7,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.service.annotation.DeleteExchange;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -47,5 +48,11 @@ public class TaskController {
         TaskResponse response = TaskResponse.fromEntity(updatedTask);
 
         return ResponseEntity.status(200).body(response);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity deleteById(@PathVariable Long id) {
+        taskService.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
 }
