@@ -1,11 +1,9 @@
 package dev.matheuslf.desafio.inscritos.controllers;
 
 import dev.matheuslf.desafio.inscritos.domains.Task;
-import dev.matheuslf.desafio.inscritos.dto.task.TaskFilterDTO;
-import dev.matheuslf.desafio.inscritos.dto.task.TaskFilterResponse;
-import dev.matheuslf.desafio.inscritos.dto.task.TaskRequest;
-import dev.matheuslf.desafio.inscritos.dto.task.TaskResponse;
+import dev.matheuslf.desafio.inscritos.dto.task.*;
 import dev.matheuslf.desafio.inscritos.services.TaskService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -42,5 +40,12 @@ public class TaskController {
         return ResponseEntity.status(200).body(responseList);
     }
 
-    public ResponseEntity<Task>
+    @PutMapping("/{id}/status")
+    public ResponseEntity<TaskResponse> updateTaskStatus(@PathVariable Long id, @RequestBody @Valid TaskUpdateStatusRequest body) {
+        var updatedTask = taskService.updateStatus(id, body.status());
+
+        TaskResponse response = TaskResponse.fromEntity(updatedTask);
+
+        return ResponseEntity.status(200).body(response);
+    }
 }
