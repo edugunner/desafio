@@ -1,5 +1,6 @@
 package dev.matheuslf.desafio.inscritos.domains;
 
+import dev.matheuslf.desafio.inscritos.dto.task.TaskRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -7,6 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Getter
@@ -48,5 +50,14 @@ public class Task {
     @ManyToOne
     @JoinColumn(name = "project_id")
     private Project project;
+
+    public Task(TaskRequest body) {
+        this.title = body.title();
+        this.description = body.description();
+        Status status1 = Status.valueOf(body.status());
+        Priority priority1 = Priority.valueOf(body.priority());
+        this.dueDate = body.dueDate();
+
+    }
 
 }

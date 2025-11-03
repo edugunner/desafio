@@ -2,6 +2,7 @@ package dev.matheuslf.desafio.inscritos.dto.task;
 
 import dev.matheuslf.desafio.inscritos.domains.Task;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public record TaskResponse(

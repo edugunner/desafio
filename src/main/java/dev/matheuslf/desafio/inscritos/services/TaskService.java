@@ -8,6 +8,8 @@ import dev.matheuslf.desafio.inscritos.repositories.TaskRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Service
 public class TaskService {
@@ -68,7 +70,7 @@ public class TaskService {
             return taskRepository.findByProject_Id(body.projectId());
         }
 
-        return taskRepository.findAll();
+        throw  new NoSuchElementException("Não foi encontrado nenhuma task nesse filtro. Tente novamente");
     }
 
     public Task updateStatus(Long taskId, Task.Status status) {

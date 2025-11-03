@@ -3,14 +3,14 @@ package dev.matheuslf.desafio.inscritos.repositories;
 import dev.matheuslf.desafio.inscritos.domains.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
-import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface TaskRepository extends JpaRepository<Task, Long>, JpaSpecificationExecutor<Task>{
     List<Task> findByStatus(Task.Status status);
 
-    List<Task> findByProject_Id(Long id);
+    List<Task> findByProject_Id(Long projectId);
 
     List<Task> findByPriority(Task.Priority priority);
 

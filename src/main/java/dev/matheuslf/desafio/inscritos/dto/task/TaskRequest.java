@@ -1,6 +1,5 @@
 package dev.matheuslf.desafio.inscritos.dto.task;
 
-import dev.matheuslf.desafio.inscritos.domains.Project;
 import dev.matheuslf.desafio.inscritos.domains.Task;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

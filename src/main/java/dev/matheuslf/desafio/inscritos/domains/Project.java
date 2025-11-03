@@ -1,5 +1,6 @@
 package dev.matheuslf.desafio.inscritos.domains;
 
+import dev.matheuslf.desafio.inscritos.dto.project.ProjectRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -27,4 +28,11 @@ public class Project {
 
     private Date startDate;
     private Date endDate;
+
+    public Project(ProjectRequest body) {
+        this.endDate = body.endDate();
+        this.startDate = body.startDate();
+        this.description = body.description();
+        this.name = body.name();
+    }
 }
